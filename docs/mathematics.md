@@ -2,7 +2,9 @@
 
 This record explains the declarations being formalized. Kernel verification status
 is determined by `verification/summary.json` and the accompanying build/axiom logs,
-not by the existence of this prose. Unfinished global results are in `obligations.md`.
+not by the existence of this prose. `obligations.md` separately records existing
+source proofs awaiting Lean translation and interfaces explicitly left open by
+the dated source. These are different statuses.
 
 ## M01 — Exact semantics and preprocessing
 
@@ -156,8 +158,9 @@ that anchor to be the same one. Hence every anchor and every neuron have a uniqu
 partner. This theorem does not assume a stronger disjoint-support condition.
 
 Lean: `helper_count_bound`, `unique_helpers_at_bound`.
-The geometric premise and path count still need to be connected to the full
-Family 2/3 theorem; see O1–O2.
+The source supplies the geometric helper argument and path count in Theorems
+3–8. Their connection to these Lean components is not yet fully formalized;
+see O1–O2.
 
 ## M07 — Exact normalized shared-parameter formulation
 
@@ -187,7 +190,8 @@ If |v|<=M, the existence of Boolean d and constraints
 0<=z, v<=z, z<=M bit(d), z<=v+M(1-bit(d)) is equivalent to z=ReLU(v).
 For d=0, z=0 and v<=0; for d=1, z=v>=0. Conversely choose the active bit by
 the sign of v and use the supplied bound. The theorem does not derive M or permit
-fractional bits. The full finite-witness bound is a separate obligation O4.
+fractional bits. Source Theorem 11 supplies the full finite-witness argument;
+its complete Lean translation is tracked as O4.
 
 Lean: `binary_product_iff`, `bigM_relu_iff`.
 

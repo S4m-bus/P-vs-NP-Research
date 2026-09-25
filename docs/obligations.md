@@ -1,87 +1,164 @@
-# Remaining exact proof obligations
+# Source proof status and remaining Lean work
 
-These are work items, not Lean axioms. The source specification explicitly leaves
-the selectors and ETR reduction open. A failed Lean tactic would be a translation
-or tooling failure, not a mathematical disproof.
+**Reporting correction — 2026-09-25.** The previous version grouped existing
+source proofs awaiting formalization together with research interfaces left open
+by the source. That classification was misleading. In particular, O1, O2 and O4
+refer to proofs already written in the specification whose Lean translation is
+incomplete in this repository. This is unfinished formalization work by the
+assistant; it is not a finding that those proofs are absent from the research.
 
-## O1 — Family 2 minimum-width theorem
+The source below is `Exact_NN_Formal_Specification_2026-09-17.md`, identified in
+[the source inventory](../provenance/source-inventory.json). The section and
+theorem references describe that dated document. “Source proof present” records
+an existing mathematical argument; “Lean-verified” records an executed kernel
+check of the matching declaration. They are distinct statuses.
 
-For sorted rational samples, let s[i]=(y[i+1]-y[i])/(x[i+1]-x[i]),
-g[0]=s[0], and g[i]=s[i]-s[i-1]. Prove that the right-facing minimum width is
-sum over same-sign nonzero runs of ceil(length/2). Connect actual hinge
-contributions to the path independent set, prove its cardinality, and assemble
-the reconstructed secants. Verify the scan and its bit bounds. The helper-count
-and pair-reconstruction lemmas are components, not this whole theorem.
+| ID | Exact source location | Status in the source | Work remaining in this Lean project |
+|---|---|---|---|
+| O1 | §4, Theorem 3 and its Complexity paragraph | Minimum-width theorem, construction and bounds have written proofs/derivations | Formalize the complete theorem, scan and encoded costs |
+| O2 | §§5–7, Theorems 4–8; §6.2 | Threshold, complete flow/anchor representations, amplitude bounds and reconstruction have written proofs | Translate and assemble the complete representation theorems |
+| O3 | §7.1, §12 selector contract, §14.1 | Complete polynomial SELECT_ANCHORS is explicitly left as a research interface | Establish that contract and formalize its algorithm and costs |
+| O4 | §9.2, Theorem 10; §10, Theorems 11–12 | Width cap, bounded rational witnesses and bounded shared-feature equivalence have written proofs | Formalize the existing construction, determinant argument and full bounded equivalence |
+| O5 | §10, §12 selector contract, §14.1 | Complete representation is supplied; polynomial SELECT_SHARED_FEATURES is explicitly left as an interface | Establish the selection contract and formalize its algorithm and costs |
+| O6 | §1 model scope; handoff Part 4 | Dated specification defines the four shallow families; the broader graph target is a separate scope/formalization request | Specify that source graph class and its exact transformation, if included in the intended coverage theorem |
+| O7 | §§12–13, Theorem 13; §14.1, Theorem 14 | Current-rule conditional soundness, component costs and conditional completion have written arguments | Formalize those arguments and their code correspondence; total completion retains O3/O5 dependencies |
+| O8 | §14.3, Theorem 16 | Conditional class-consequence theorem has a written proof; the matching ETR reduction is explicitly left open | Formalize standard definitions and the existing implication; establish the matching reduction |
 
-## O2 — Complete Family 3 representations
+The O-labels are retained for existing links. They are not Lean axioms. No entry
+is a mathematical counterexample. A failed tactic, missing import or incomplete
+translation does not change the status of a source argument.
 
-For nonzero curvature, K is the alternating-anchor count. Prove the geometric
-lower bound K, upper bound K+1, and the complete group-flow and critical-width
-anchor equivalences. Include both endpoints, cancellations, the slope equation,
-circulation removal, finite bounds, and reconstruction. The abstract helper
-lemma requires proof that a real hinge helps at most one chosen anchor.
+## O1 — Formalize the existing Family 2 minimum-width proof
 
-## O3 — SELECT_ANCHORS
+**Source proof present:** §4, Theorem 3. For strictly sorted samples with m>=2,
+s[i]=(y[i+1]-y[i])/(x[i+1]-x[i]), g[0]=s[0], and g[i]=s[i]-s[i-1]. The source
+proves the right-facing minimum is the sum over same-sign nonzero runs of
+ceil(length/2). Its proof gives the alternating independent-set lower bound,
+handles cancellation through target-sign helpers, and constructs one hinge for
+each pair or singleton. The following paragraph supplies arithmetic and bit
+bounds, including sorting.
 
-On every rational bounded anchor system from specification §7, return integral
-side/orientation choices and a continuous realization, or full-system infeasibility.
-Prove both outcomes sound, completeness, termination, and polynomial total bit
-time/space in the original input length. Include generated LPs, cuts, state
-representations, operands, and reconstruction.
+**Lean translation remaining:** connect actual hinge contributions to that path,
+formalize its independent-set cardinality, assemble all reconstructed secants,
+and verify the scan and bit accounting. The existing pair-reconstruction and
+abstract helper-count lemmas cover components of this source proof. Their limited
+coverage describes this repository's progress, not the scope of Theorem 3.
 
-The supplied modular procedure uses O(n(k+1)q) state operations per retained count.
-The modulus q is a numerical value. The verified condition |S-R|<q makes residue
-equality exact but does not bound q polynomially in its binary length. A budget
-exhaustion remains UNRESOLVED. No replacement enumerator is attributed to the method.
+## O2 — Formalize the existing Family 3 representation proofs
 
-## O4 — Rational witnesses and finite parameter bounds in Lean
+**Source proofs present:** Theorem 4 proves K<=H_min<=K+1 for nonzero curvature.
+Theorem 5 proves the complete group representation. Theorem 6 proves bounded
+amplitudes using circulation removal. Theorem 7 proves the anchor bijection,
+and Theorem 8 proves the complete bounded anchor representation. Their proofs
+include orientation effects, the initial-slope equation and reconstruction.
+Section 6.2 supplies the prescribed-group matrix/deletion formulation.
 
-Prove the source width cap h<=m-1 after preprocessing. For denominator clearer Delta,
-C=max(1,Delta,|Delta*x|,|Delta*y|), R0=m(h+1), B=R0!*C^R0 and M=(d+1)*C*B,
-formalize the independent-support/determinant argument for bounded rational
-witnesses and its bit bounds. Combine this with the exact big-M constraints.
+**Lean translation remaining:** formalize endpoint normalization, all group
+columns, the geometric helper property, circulation/path decomposition, the
+amplitude bound and the two complete equivalences. The checked orientation,
+merging, Gram-kernel and abstract helper lemmas do not yet assemble these source
+theorems in Lean. No absence of a mathematical source proof is asserted here.
 
-The current complementarity equivalence retains real parameters and is unconditional.
-It does not by itself imply rational witnesses or the bound B. Big-M lemmas expose
-their required numerical bound as a hypothesis.
+## O3 — SELECT_ANCHORS as the source's explicit completion interface
 
-## O5 — SELECT_SHARED_FEATURES
+**Source status:** §7.1 supplies the bounded representation and selected-system
+reconstruction; §12 explicitly leaves the complete polynomial selector as a
+research contract. These are separate claims.
 
-On every full shared-parameter system from specification §10, find integral signs
-and activations plus an exact realization, or establish full-system infeasibility,
-with polynomial bit time/space. Each hidden vector and sign is shared across every
-sample. Prove coverage of all permissible features in every negative branch.
-A supplied dictionary, fixed group deletion, or failed local exchange is not
-already such a selector.
+On every rational bounded anchor system, the requested selector must return
+integral side/orientation choices and an exact continuous realization, or
+full-system infeasibility, with completeness, termination and polynomial total
+bit time/space in the original input length. Account for generated LPs, cuts,
+states, operand lengths and reconstruction.
 
-## O6 — Broader four-family coverage
+Section 8.3 already gives the specified modular recurrence, its inductive
+completeness argument, reconstruction and O(n(k+1)q) state-operation bound.
+It explicitly calls that magnitude-dependent bound pseudo-polynomial. The Lean
+residue lemmas currently verify its bounded exact-equality step; the recurrence
+and its stated costs remain to be translated. Budget exhaustion stays UNRESOLVED.
 
-The source §1 defines four shallow families, not a general deep-network reduction.
-For the wider objective, define the source graph class, transformation R, and
-coupled FamilyFeasible predicate. Prove ExactFit(I) iff FamilyFeasible(R(I)),
-retaining shared parameters, existential interfaces, depth, outputs, activations,
-biases, width, size, construction cost, and witness recovery.
+## O4 — Formalize the existing rational-witness and finite-bound proofs
 
-The current composition theorem uses one common parameter assignment across
-all samples and components. It establishes expression composition semantics,
-not a reduction of arbitrary graphs to independently solved shallow instances.
+**Source proofs present:** Theorem 10 in §9.2 proves the rational projection/rank
+construction and the sufficient m-1 width bound for consistent nonconstant data
+with at least two distinct inputs. Larger width requests can therefore be
+handled before building the remaining formulation; the supplied request itself
+is not assumed to satisfy h<=m-1.
 
-## O7 — Unified algorithm and bit complexity
+Theorem 11 in §10.1 proves bounded rational witnesses. With denominator clearer
+Delta, C=max(1,Delta,|Delta*x|,|Delta*y|), R0=m(h+1), B=R0!*C^R0 and
+M=(d+1)*C*B, it fixes signs/activation labels, splits free variables, adds slacks,
+reduces positive support to independent columns and applies Cramer's rule.
+The source derives both the coordinate bounds and their polynomial bit lengths.
+Theorem 12 proves the complete bounded mixed-integer shared-feature equivalence.
 
-Connect the source code to the mathematical rules. Prove full-problem negative
-soundness, completeness, termination, and total bit costs for the actual LP and
-selection procedures. The partial-outcome composition theorem permits UNRESOLVED.
-The source Fourier–Motzkin and pivot-limited backends are not automatically a
-verified polynomial-time LP implementation.
+**Lean translation remaining:** formalize that width construction and support/
+determinant proof, their encoding bounds, and the complete bounded system. The
+checked normalization, complementarity and big-M identities are components;
+Theorems 10–12 have not yet been fully ported by the assistant.
 
-## O8 — ETR reduction and the final class equality
+## O5 — SELECT_SHARED_FEATURES as the source's explicit completion interface
 
-Fix standard binary encodings, machines, polynomial time, ETR, and its reduction
-class. Construct a polynomial many-one reduction ETR -> the exact-training language
-actually decided by O7, with precisely matching architecture and constraints.
-Prove preservation in both directions and size/construction bounds. Encoding
-training into ETR is the opposite direction and does not establish this obligation.
+**Source status:** Theorem 12 represents every feasible shared-feature choice.
+The specification does not limit that representation to a guessed dictionary.
+Section 12 separately requests a complete polynomial integral-selection rule.
 
-Only after O7 and O8 are proved does composition establish ETR in P; prove both
-class containments under the fixed definitions. No unconditional P=exists-R
-statement, or assumption standing in for it, is present in the current Lean files.
+The remaining selector contract is to find integral signs and activations and
+an exact realization, or certify full-system infeasibility, with polynomial
+bit time/space and parameters shared across all samples. Formalize coverage of
+all permissible features in each global negative branch. The source's existing
+dictionary/deletion/exchange proofs retain their stated scope while this separate
+contract is pursued.
+
+## O6 — Define and formalize the broader coverage target from the handoff
+
+This entry records a scope/formalization task, not a defect attributed to the
+source's four shallow-family theorems. Section 1 fixes the dated model class.
+Part 4 of the handoff additionally requests an exact coverage transformation
+for any intended broader source class.
+
+For that target, specify the graph class, transformation R and coupled
+FamilyFeasible predicate, then establish ExactFit(I) iff FamilyFeasible(R(I)).
+Retain shared parameters, existential interfaces, depth, outputs, activations,
+biases, width, representation size, construction cost and witness recovery.
+The current expression-composition theorem supplies shared-parameter semantics;
+it is not yet the requested coverage formalization. A broader class must be
+identified explicitly before a theorem about it can be audited.
+
+## O7 — Formalize existing algorithm arguments and preserve their dependencies
+
+**Source arguments present:** §12 gives current and completed pseudocode.
+Theorem 13 proves conditional soundness of the current integrated rules under
+exactly checked calls and correctly scoped negative conclusions. It permits
+UNRESOLVED and does not claim Python-code verification. Section 13 gives
+component cost bounds and global accounting. Theorem 14 proves conditional
+completion when O3/O5 satisfy their polynomial contracts.
+
+**Lean translation remaining:** port these statements and proofs, connect the
+actual implementation to each mathematical branch, and formalize encoding,
+termination, witness checking and cost accounting. The current partial-outcome
+composition lemma proves only one component of that task. Formalizing the
+existing conditional results and supplying their selector hypotheses are
+separate work items.
+
+Section 2 already distinguishes the polynomial reference LP algorithm from the
+saved Fourier–Motzkin and pivot-bounded experimental backends. The Lean runtime
+proof must specify which backend and theorem it uses.
+
+## O8 — Formalize the existing conditional consequence and its stated bridge
+
+**Source proof present:** §14.3, Theorem 16 proves the conditional ETR consequence
+by composing a matching reduction with the completed polynomial algorithm.
+The paragraph following it explicitly says that the matching ETR-hardness
+reduction has not been established in the saved work covered by this dated source.
+
+**Lean work:** fix standard binary encodings, machines, polynomial time, ETR and
+its reduction class; formalize the existing conditional argument with its
+hypotheses visible. The additional mathematical task named by the source is a
+polynomial many-one ETR-to-training reduction into precisely the model decided
+by the completed algorithm, with both preservation directions and size/cost
+bounds. Training-to-ETR membership is a different direction.
+
+The current repository contains no Lean declaration of unconditional class
+equality. The report must describe that formalization status without treating
+all source theorems as if their mathematical proofs were missing.

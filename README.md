@@ -29,16 +29,19 @@ and a supplied upper bound on the hidden-neuron count.
 
 These results characterize feasibility and establish supporting mathematical
 identities. The Python solver and its runtime bounds have not been formally
-verified. Full Family 2 minimum-width and Family 3 representation proofs,
-bounded rational witnesses, complete polynomial selectors, the all-input
-algorithm, and the matching ETR reduction remain explicit obligations.
+verified. The source already contains proofs of the Family 2 minimum-width
+theorem (Theorem 3), Family 3 representations (Theorems 4–8), and bounded
+rational/shared-feature results (Theorems 10–12). Their complete Lean translation
+is still unfinished in this repository. Separately, the dated source explicitly
+leaves the general polynomial selectors and matching ETR reduction as completion
+interfaces. The [source/Lean status table](docs/obligations.md) distinguishes them.
 
 ## Proof and verification records
 
 - [Theorem-by-theorem status](docs/theorem-status.md)
 - [Mathematical statements and proofs](docs/mathematics.md)
 - [Handoff to the manuscript session](docs/handoff.md)
-- [Remaining exact obligations O1–O8](docs/obligations.md)
+- [Source proof status and remaining Lean work O1–O8](docs/obligations.md)
 - [Manuscript, algorithm and complexity correspondence](docs/manuscript-map.md)
 - [Source references](docs/references.md)
 - [Machine-readable theorem index](provenance/theorem-index.json)

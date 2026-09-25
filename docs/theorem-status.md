@@ -10,22 +10,25 @@ The complete evidence is in [the build log](../verification/build.log),
 [axioms log](../verification/axioms.log), and
 [source-hash summary](../verification/summary.json).
 
-## Overall scope
+## Source proofs and Lean coverage
 
-| Subject | Established here | Remaining proof |
+The previous report mixed incomplete Lean translation with mathematical work
+left open by the source. The [corrected O1–O8 table](obligations.md) gives exact
+source theorem references and separates those statuses.
+
+| Subject | Existing source argument | Lean coverage and remaining work |
 |---|---|---|
-| Family 1 | Scalar two-system and shared-output characterizations | Verified executable LP algorithm and its bit cost |
-| Family 2 | Reflection, pair reconstruction, merging, abstract helper count | Complete minimum-width theorem and scan, O1 |
-| Family 3 | Hinge/shallow equivalence, curvature and bounded residue identities | Complete group/anchor representation and selector, O2–O3 |
-| Family 4 | Shared complementarity equivalence and bounded binary identities | Rational bounds and complete feature selector, O4–O5 |
-| Network composition | Shared-expression substitution and coupled feasibility | Broader graph-to-four-family reduction, O6 |
-| Algorithm | Certificate soundness and partial-outcome composition | All-input correctness, termination and bit complexity, O7 |
-| Complexity consequence | Precise remaining reduction direction documented | Standard encodings/classes, ETR-to-training reduction and final containments, O8 |
+| Family 1 | §3, Theorems 1–2; reference LP complexity | Characterizations checked; executable LP/bit-cost formalization pending |
+| Family 2 | §4, Theorem 3: minimum width, construction and costs | Supporting lemmas checked; full source-proof translation pending (O1) |
+| Family 3 | §§5–7, Theorems 4–8: threshold and complete bounded representations | Structural components checked; full translations pending (O2); selector separately open in source (O3) |
+| Family 4 | §§9–10, Theorems 10–12: construction, rational bounds and bounded equivalence | Complementarity/binary components checked; full translations pending (O4); selector separately open in source (O5) |
+| Broader coverage | Dated §1 scope plus handoff Part 4 request | Shared composition checked; broader class/transformation still to be specified and formalized (O6) |
+| Algorithm | Theorem 13 conditional soundness, §13 costs, Theorem 14 conditional completion | Partial-outcome component checked; source arguments/code connection pending; completion retains selectors (O7) |
+| Complexity consequence | §14.3, Theorem 16 conditional argument | Definitions/implication pending; matching ETR reduction separately open in the dated source (O8) |
 
-The helper-count theorems explicitly assume coverage and at-most-one-anchor
-help. The big-M equivalence explicitly assumes a bound. The residue theorem
-explicitly assumes its strict range bound. Those hypotheses have not been
-silently proved for every source instance. See [O1–O8](obligations.md).
+The checked helper-count, big-M and residue declarations expose their hypotheses.
+The source gives wider arguments supplying relevant geometric or numerical
+conditions; those complete arguments have not all been translated here.
 
 ## Complete declaration list
 

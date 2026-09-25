@@ -9,15 +9,21 @@ already exists. All four families remain in scope.
 | 1. Introduction and main results | 4–6 | Exact theorem scope, dependency map, source provenance | Final abstract must follow the complete proof chain |
 | 2. Exact Neural Network Training | 5–7 | Rational data, real parameters, supplied widths, preprocessing semantics | Binary encoding, full decision/construction interface |
 | 3. Structural principles of neural networks | 6–9 | ReLU identities, normalization, zero padding, permutations, shared expression composition | Broader graph model and its size/cost semantics |
-| 4. Four-family representation theorem | 8–14 | Exact family predicates, partial embeddings, coupled interface theorem | O6 broader coverage; O2/O4 complete bounded representations |
-| 5. Mathematical analysis of the four families | 18–26 | Family 1 characterization; Family 2/3 structural lemmas; Family 4 complementarity equivalence | O1–O5; minimum width, full flow/anchor proofs, finite bounds, selectors |
+| 4. Four-family representation theorem | 8–14 | Exact family predicates, partial embeddings, coupled interface theorem | O2/O4: translate existing bounded representation proofs; O6: broader scope/coverage task |
+| 5. Mathematical analysis of the four families | 18–26 | Family 1 characterization; Family 2/3 structural lemmas; Family 4 complementarity equivalence | O1/O2/O4: translate source proofs; O3/O5: source-open selectors |
 | 6. Unified exact-training algorithm | 10–16 | Certificate soundness and partial-outcome composition; source implementation correspondence | O7 verified all-input algorithm |
-| 7. Time and space analysis | 7–11 | Arithmetic/bit distinctions and explicit accounting below | O3/O5/O7 global bounds and encoded witness bounds |
-| 8. Complexity-class consequence | 5–9 | Exact required reduction direction and final dependency in O8 | Standard formal classes/encodings, matching ETR reduction, complete polynomial algorithm |
+| 7. Time and space analysis | 7–11 | Arithmetic/bit distinctions and explicit accounting below | Translate source component/witness bounds; global completion retains O3/O5/O7 |
+| 8. Complexity-class consequence | 5–9 | Exact required reduction direction and final dependency in O8 | Formal classes/encodings and source Theorem 16; matching reduction and completed algorithm |
 | Main text subtotal | 63–98 | Planning estimate | No padding to meet it |
 | References | 3–5 | Pinned primary formalization sources and original research inventory | Verify further literature only when used |
 | Appendices | 25–50 | Inventory, benchmark provenance, derivations, interfaces, build/audit record, theorem correspondence | Remaining algorithm, arithmetic and proof records |
 | Complete manuscript | 91–153 | Original total retained | Completeness determines final length |
+
+The remaining-dependency column mixes work at different levels; consult the
+[corrected source/Lean status table](obligations.md). In particular O1/O2/O4
+port proofs already present in source Theorems 3–8 and 10–12. O3/O5 and the
+matching reduction in O8 are explicitly open interfaces in the dated source.
+O6 is the additional broader-coverage target requested by the handoff.
 
 ## Dependency map
 
