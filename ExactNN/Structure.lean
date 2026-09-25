@@ -60,7 +60,8 @@ theorem Shallow.eval_reindex {d h : ℕ} (N : Shallow d h)
     (p : Fin h ≃ Fin h) (x : Fin d → ℝ) : (N.reindex p).eval x = N.eval x := by
   unfold Shallow.eval Shallow.reindex
   congr 1
-  exact Equiv.sum_comp p _
+  exact Equiv.sum_comp p (fun j =>
+    N.coeff j * relu (affine (N.weight j) (N.hiddenBias j) x))
 
 /-- Reordering and consistent duplicate insertion as surjective resampling. -/
 theorem exactFit_resample {m n d h : ℕ} (D : ScalarData m d)

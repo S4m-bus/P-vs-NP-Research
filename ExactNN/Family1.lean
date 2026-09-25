@@ -114,7 +114,8 @@ theorem vectorOneFit_of_coordinate {m d q : ℕ}
   obtain ⟨w, b, s, c, hf⟩ := hf
   refine ⟨w, b, fun k => r k * s, fun k => Y i₀ k + r k * (c - Y i₀ a), ?_⟩
   intro i k
-  rw [hr i k, ← hf i]
+  have hi : c + s * relu (affine w b (X i)) = Y i a := hf i
+  rw [hr i k, ← hi]
   ring
 
 /-- Specification Theorem 2 with one supplied varying coordinate. -/

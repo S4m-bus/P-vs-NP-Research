@@ -1,0 +1,24 @@
+{
+  "verified_at_utc": "2026-09-25T11:40:56.125583+00:00",
+  "theorems": 59,
+  "modules": 8,
+  "build_exit_code": 0,
+  "axiom_audit_exit_code": 0,
+  "permitted_foundational_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "source_sha256": {
+    "ExactNN.lean": "7e1cc5448e4c512c441121dfdf7233efb7acb80ae2f6aa900314ff69cda0a182",
+    "ExactNN/Basic.lean": "19f008164f0dce70e625885d2c5004a28d4d358a6833611ef23d3b00e368ba17",
+    "ExactNN/Certificates.lean": "5feb79938fc5b12829d9a6c754d1614d5429ec6de2813926a07e67da76422f91",
+    "ExactNN/Family1.lean": "b5caa3368d8e4c18bad9635079458b032fa7970a62d90ad2908e7db9e601ac3e",
+    "ExactNN/FamilyBridge.lean": "fa591466c7fd9ec591cea16f0bb8964bee39265a7bfbd13ca25316241bf4cf1f",
+    "ExactNN/OneDimensional.lean": "b225fefe8c12e09988f7c0183d862f8d618676f8e9cff2b825afbfe7290b0b89",
+    "ExactNN/Orientation.lean": "6f227edac80c73506ebd5e5c77b8adef43c018a905989f9d48a64d7f0ad4ae34",
+    "ExactNN/SharedParameters.lean": "d23322bf0b404b45419e997cd11825ea72bc092c8d8f1f01feb4f8bf1a3e11b8",
+    "ExactNN/Structure.lean": "fe1c546828bae7b34a5ae81f630dc2bc896470799c79daf9535e5df69a58f7a2"
+  },
+  "scope": "Only the listed declarations; no unconditional P = exists R theorem is claimed."
+}

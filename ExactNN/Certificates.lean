@@ -22,7 +22,7 @@ theorem gram_kernel_iff {r n : ℕ} (H : Matrix (Fin r) (Fin n) ℝ) (v : Fin n 
 /-- Soundness of a supplied rational/real linear infeasibility certificate. -/
 theorem linear_infeasible_of_certificate {r n : ℕ}
     (A : Fin r → Fin n → ℝ) (b multiplier : Fin r → ℝ)
-    (hλ : ∀ i, 0 ≤ multiplier i)
+    (hNonneg : ∀ i, 0 ≤ multiplier i)
     (hcancel : ∀ j, ∑ i, multiplier i * A i j = 0)
     (hneg : ∑ i, multiplier i * b i < 0) :
     ¬ ∃ x : Fin n → ℝ, ∀ i, (∑ j, A i j * x j) ≤ b i := by
@@ -30,7 +30,7 @@ theorem linear_infeasible_of_certificate {r n : ℕ}
   have hsum : (∑ i, multiplier i * (∑ j, A i j * x j)) ≤ ∑ i, multiplier i * b i := by
     apply Finset.sum_le_sum
     intro i _
-    exact mul_le_mul_of_nonneg_left (hx i) (hλ i)
+    exact mul_le_mul_of_nonneg_left (hx i) (hNonneg i)
   have hz : (∑ i, multiplier i * (∑ j, A i j * x j)) = 0 := by
     simp_rw [Finset.mul_sum, ← mul_assoc]
     rw [Finset.sum_comm]
