@@ -1,0 +1,22 @@
+✔ [1129/1138] Built ExactNN.Basic
+✔ [1130/1138] Built ExactNN.Structure
+⚠ [1131/1138] Built ExactNN.Family1
+warning: ././././ExactNN/Family1.lean:107:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [1132/1138] Built ExactNN.Certificates
+⚠ [1133/1138] Built ExactNN.Orientation
+warning: ././././ExactNN/Orientation.lean:35:19: unused variable `hRU`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+✔ [1134/1138] Built ExactNN.SharedParameters
+⚠ [1135/1138] Built ExactNN.OneDimensional
+warning: ././././ExactNN/OneDimensional.lean:25:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ././././ExactNN/OneDimensional.lean:69:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ././././ExactNN/OneDimensional.lean:71:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ././././ExactNN/OneDimensional.lean:93:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [1136/1138] Built ExactNN.FamilyBridge
+✔ [1137/1138] Built ExactNN
+Build completed successfully.

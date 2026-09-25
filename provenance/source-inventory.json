@@ -1,0 +1,178 @@
+[
+  {
+    "file": "Exact_NN_Combined_Stage_Experiment.zip",
+    "bytes": 1752039,
+    "sha256": "71b6ec58604073a18a31d6427b8e297e99afa8b5dc5430f1bf31ac0a9f5b3d8e",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Historical combined-stage implementation and results",
+    "relationship_to_specification": "Implementation evidence for integrated stages; distinct from all-input proof."
+  },
+  {
+    "file": "Exact_NN_Compact_Representation_Proofs_and_Checks.zip",
+    "bytes": 749215,
+    "sha256": "bc77f9e2dbc79d20be5436e4cb9e19c489f821c334e154390465c8a538cb5e68",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Compact-representation source, proofs, and saved checks",
+    "relationship_to_specification": "Source bundle used to inspect mathematical-to-code correspondence and saved benchmark provenance."
+  },
+  {
+    "file": "Exact_NN_Compact_Representation_Theorems.md",
+    "bytes": 25018,
+    "sha256": "0d7278b6004feff5cc87e0c6d8b43cd0fc4fa7b63dc2a6d520fb9d801f7950e2",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Compact-representation mathematical notes",
+    "relationship_to_specification": "Supporting derivations for the representation components of the dated specification."
+  },
+  {
+    "file": "Exact_NN_Current_Algorithm.md",
+    "bytes": 25144,
+    "sha256": "04e36db01cc51c42a740438cbce668915c141642116c276b7a49ed1599b47d5c",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Integrated algorithm description",
+    "relationship_to_specification": "Source for component roles and the distinction between algorithms and representation interfaces."
+  },
+  {
+    "file": "Exact_NN_Engineering_Report_2026-09-17.md",
+    "bytes": 30015,
+    "sha256": "13240a50e49e615a8b649f9c71d0dbf6625b42be85687e8209b1b98658ae0f75",
+    "version": "2026-09-17",
+    "purpose": "Dated implementation and engineering report",
+    "relationship_to_specification": "Companion report for the specification and implementation correspondence."
+  },
+  {
+    "file": "Exact_NN_Engineering_v0_1_Reproducibility.zip",
+    "bytes": 4271601,
+    "sha256": "30f1b2e8305201786e96d668bb5ebde606ad8fae10c9c37a18f7f4864e4618ee",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Engineering reproducibility archive",
+    "relationship_to_specification": "Companion implementation artifacts; separate from the specification source archive."
+  },
+  {
+    "file": "Exact_NN_Enumeration_Replacements.zip",
+    "bytes": 46702,
+    "sha256": "cce96b6bdb417380f24370184db3c3c2d969fbc8b8bc4af405fe93f3a233e8ef",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Enumeration-replacement implementation archive",
+    "relationship_to_specification": "Relevant source routines inspected as part of the integrated framework."
+  },
+  {
+    "file": "Exact_NN_Flow_Form_and_Modulus_Analysis.md",
+    "bytes": 18242,
+    "sha256": "6bab1a7da905eff8214c918fd449e405ba6d3f962e3ab2505c4c507eaf5496b0",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Flow and modular-orientation analysis",
+    "relationship_to_specification": "Supporting source for group formulations, residue exactness and modulus-dependent costs."
+  },
+  {
+    "file": "Exact_NN_Formal_Specification_2026-09-17.md",
+    "bytes": 54931,
+    "sha256": "ee08d4fa9591b84374b10ee8b3f689f0f17ffd219e782634447f33c1bacc659f",
+    "version": "2026-09-17",
+    "purpose": "Dated formal mathematical specification",
+    "relationship_to_specification": "Primary source for models, statements, selectors and the remaining ETR-reduction obligation."
+  },
+  {
+    "file": "Exact_NN_Formal_Specification_2026-09-17.pdf",
+    "bytes": 1013694,
+    "sha256": "f3d32a201300569bdbfb97d9f4aa2cca3c14f0b363f9781f051b25b324c9e657",
+    "version": "2026-09-17",
+    "purpose": "Typeset dated specification",
+    "relationship_to_specification": "PDF companion of the primary mathematical source."
+  },
+  {
+    "file": "Exact_NN_Formal_Specification_2026-09-17.tex",
+    "bytes": 68079,
+    "sha256": "0b813ef92a2ea8b7b4b188798fa0078b08f1fae4b3639953968233be989cd12b",
+    "version": "2026-09-17",
+    "purpose": "LaTeX source of the dated specification",
+    "relationship_to_specification": "Typesetting source corresponding to the dated PDF and Markdown."
+  },
+  {
+    "file": "Exact_NN_Formal_Specification_Sources_2026-09-17.zip",
+    "bytes": 52767,
+    "sha256": "a75e23c44c881f8b800ccd28b7b70ef20a22950e11aff7f10186370edd13267b",
+    "version": "2026-09-17",
+    "purpose": "Specification source archive",
+    "relationship_to_specification": "Document source bundle; not treated as the executable solver."
+  },
+  {
+    "file": "Exact_NN_Godsil_Royle_Rereading.md",
+    "bytes": 15956,
+    "sha256": "88c59331347bd387ff2cc5c9234fd72a983f5ee554fc0dde029efa05f958133b",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Research rereading notes",
+    "relationship_to_specification": "Supporting source context; no external theorem is promoted to a verified dependency merely by appearing here."
+  },
+  {
+    "file": "Exact_NN_Implementation_Map_2026-09-17.md",
+    "bytes": 10460,
+    "sha256": "2def833fb19dc3c2430408c41f952079ba917b156b7d1278a62c8f9ecd59acf7",
+    "version": "2026-09-17",
+    "purpose": "Dated mathematical-to-implementation map",
+    "relationship_to_specification": "Companion correspondence checked against actual source definitions and code."
+  },
+  {
+    "file": "Exact_NN_Joint_Group_Selection_Experiment.zip",
+    "bytes": 1539806,
+    "sha256": "daca537ad97f3f7e527b1e8c592f891d2fc1ac564b56d3b4726fcc46b89e4d24",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Joint group-selection implementation and saved results",
+    "relationship_to_specification": "Historical experimental evidence and source routines; not a universal completeness proof."
+  },
+  {
+    "file": "Exact_NN_Joint_Group_Selection_Results.md",
+    "bytes": 14586,
+    "sha256": "7f58f744c682f1b0c42786a3ae7be0ab1006399f073635371739fa57537fc783",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Historical joint group-selection results",
+    "relationship_to_specification": "Companion account of the supplied saved experimental record."
+  },
+  {
+    "file": "Exact_NN_Minimum_Width_Selection_Theorems.md",
+    "bytes": 23045,
+    "sha256": "b5a6a3dab8556e8afc244a834d4a8c3639dc6aeca8d711d877de1aa32758cbc2",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Minimum-width and selection mathematical notes",
+    "relationship_to_specification": "Supporting source for the Family 2/3 minimum-width and selection obligations."
+  },
+  {
+    "file": "Exact_NN_Small_Instance_Experiment.zip",
+    "bytes": 26053,
+    "sha256": "5efb729dd80a65055f8c4eb391f789618075f0972af9631c464436b0bcc1d3ff",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Historical small-instance experiment archive",
+    "relationship_to_specification": "Existing implementation/test artifacts; no new cases added in this formalization."
+  },
+  {
+    "file": "Exact_NN_Theoretical_Handoff_2026-09-17.md",
+    "bytes": 4958,
+    "sha256": "b8e604e73f87884ab391621c407b91ad877b2b182f21320e6589c098e9989d29",
+    "version": "2026-09-17",
+    "purpose": "Dated theoretical handoff",
+    "relationship_to_specification": "Companion statement of research scope and remaining theoretical dependencies."
+  },
+  {
+    "file": "Exact_NN_Width_Exchange_Experiment.zip",
+    "bytes": 2634957,
+    "sha256": "266f023e668f34aaf2bd157edbbc91f777efa4a1ce9cb51e207d1f23b6a53ee8",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Width-exchange implementation and experiment archive",
+    "relationship_to_specification": "Evidence for the supplied exchange stage; not assumed complete for all shared features."
+  },
+  {
+    "file": "Exact_NN_Width_Preserving_Exchange.md",
+    "bytes": 13991,
+    "sha256": "f2f75094678b3c0760090ad14b6e10747dd77fccb163799f2ac4473fb23f7165",
+    "version": "source snapshot retrieved 2026-09-25",
+    "purpose": "Width-preserving exchange mathematical notes",
+    "relationship_to_specification": "Supporting source for exchange contracts and feature-selection scope."
+  },
+  {
+    "file": "Exact_NN_P_ETR_Rigorous_Mathematics_and_Lean_Handoff_Prompt.md",
+    "bytes": 35719,
+    "sha256": "41b9bac45a756d1c8cefdee966c5000539ffa2a1b62cca68bb8f8a739bb0c082",
+    "version": "user-supplied handoff",
+    "purpose": "User-supplied formalization and verification instructions",
+    "relationship_to_specification": "Defines this work session, model fidelity, Parts 1\u20138, benchmark preservation and deliverables."
+  }
+]
