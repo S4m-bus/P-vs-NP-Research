@@ -1,0 +1,297 @@
+[
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_zero",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_nonneg",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.le_relu",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_of_nonneg",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_of_nonpos",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_mul",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_sub_relu_neg",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_eq_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.relu_target_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.affine_scale",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.affine_shift",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.common_implies_mixed",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.exactFit_mono",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.exactFit_constant",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.exactFit_zero_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Basic",
+    "declaration": "ExactNN.exactFit_no_conflict",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Certificates",
+    "declaration": "ExactNN.gram_kernel_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Certificates",
+    "declaration": "ExactNN.linear_infeasible_of_certificate",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Certificates",
+    "declaration": "ExactNN.firstResolved_sound",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.oneFit_iff_positive_or_negative",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.relu_shift",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.positiveFit_iff_lp_at_min",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.oneFit_iff_twoLP",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.vectorOneFit_coordinate",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.vectorOneFit_collinear",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.vectorOneFit_of_coordinate",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.vectorOneFit_iff_collinear_coordinate",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.vectorOneFit_constant",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Family1",
+    "declaration": "ExactNN.collinear_direction_ratio",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "FamilyBridge",
+    "declaration": "ExactNN.univariate_hinge_identity",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "FamilyBridge",
+    "declaration": "ExactNN.univariate_term_decomposition",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "FamilyBridge",
+    "declaration": "ExactNN.mixedFit_iff_shallow_one",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "FamilyBridge",
+    "declaration": "ExactNN.exactFit_dim_one_iff_mixed",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.hinge_reflection",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.hinge_orientation",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.secant_left_eq_right_sub_one",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.curvature_orientation_invariant",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.common_left_iff_reflected_right",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.pair_reconstruction",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.merge_hinges_outside_gap",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.samples_eq_of_differences",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.helper_count_bound",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "OneDimensional",
+    "declaration": "ExactNN.unique_helpers_at_bound",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Orientation",
+    "declaration": "ExactNN.residue_eq_iff_of_abs_sub_lt",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Orientation",
+    "declaration": "ExactNN.cardinality_window",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Orientation",
+    "declaration": "ExactNN.cardinality_residue_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.Shallow.eval_pad",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.exactFit_iff_slots",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.exactFit_one_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.signCoeff_cases",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.normalize_term",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.Shallow.eval_normalize",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.exactFit_iff_sharedComplementarity",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.binary_product_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "SharedParameters",
+    "declaration": "ExactNN.bigM_relu_iff",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Structure",
+    "declaration": "ExactNN.Expr.eval_substitute",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Structure",
+    "declaration": "ExactNN.coupled_feasibility",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Structure",
+    "declaration": "ExactNN.Shallow.eval_reindex",
+    "status": "awaiting compilation"
+  },
+  {
+    "module": "Structure",
+    "declaration": "ExactNN.exactFit_resample",
+    "status": "awaiting compilation"
+  }
+]

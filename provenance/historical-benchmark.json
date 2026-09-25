@@ -1,0 +1,72 @@
+{
+  "families": {
+    "family1": {
+      "instances": 86,
+      "statuses": {
+        "YES": 61,
+        "NO": 25
+      },
+      "resolved": 86,
+      "resolved_percent": 100.0,
+      "solver_seconds": 0.056607302999168496,
+      "methods": {
+        "constant": 3,
+        "target_extrema_two_lp": 78,
+        "constant_vector": 1,
+        "collinearity_then_two_lp": 3,
+        "targets_not_collinear": 1
+      }
+    },
+    "family2": {
+      "instances": 486,
+      "statuses": {
+        "YES": 128,
+        "NO": 358
+      },
+      "resolved": 486,
+      "resolved_percent": 100.0,
+      "solver_seconds": 0.01775448199884977,
+      "methods": {
+        "right_facing_path_matching": 486
+      }
+    },
+    "family3": {
+      "instances": 92,
+      "statuses": {
+        "YES": 58,
+        "NO": 34
+      },
+      "resolved": 92,
+      "resolved_percent": 100.0,
+      "solver_seconds": 0.03817771099886613,
+      "methods": {
+        "right_facing_path_matching": 10,
+        "saturated_joint_no": 34,
+        "joint_group_orientation": 46,
+        "boundary_first_positive": 1,
+        "boundary_first_negative": 1
+      }
+    },
+    "family4": {
+      "instances": 93,
+      "statuses": {
+        "YES": 90,
+        "NO": 3
+      },
+      "resolved": 93,
+      "resolved_percent": 100.0,
+      "solver_seconds": 38.016444502999775,
+      "methods": {
+        "constant": 3,
+        "affine_basis_extension": 79,
+        "infeasible_line_restriction": 3,
+        "shared_feature_alternative_deletion": 3,
+        "certified_width_exchange": 2,
+        "shared_feature_lp_deletion": 3
+      }
+    }
+  },
+  "instances": 757,
+  "resolved": 757,
+  "resolved_percent": 100.0
+}
