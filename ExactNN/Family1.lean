@@ -26,11 +26,15 @@ theorem oneFit_iff_positive_or_negative {m d : ℕ}
       refine ⟨fun k => -a * w k, -a * b, -c, ?_⟩
       intro i
       rw [affine_scale, relu_mul ha']
-      linarith [hf i]
+      calc
+        -c + -a * relu (affine w b (X i)) =
+            -(c + a * relu (affine w b (X i))) := by ring
+        _ = -y i := congrArg Neg.neg (hf i)
   · rintro (⟨w, b, c, hf⟩ | ⟨w, b, c, hf⟩)
     · exact ⟨w, b, 1, c, fun i => by simpa using hf i⟩
     · refine ⟨w, b, -1, -c, fun i => ?_⟩
-      linarith [hf i]
+      have hi : c + relu (affine w b (X i)) = -y i := hf i
+      linarith
 
 theorem relu_shift {x t : ℝ} (ht : 0 ≤ t) (hx : t ≤ relu x) :
     relu (x - t) = relu x - t := by

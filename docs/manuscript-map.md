@@ -85,7 +85,7 @@ bit-time theorem is claimed for the unified algorithm by this repository.
 
 1. Source/version inventory: `provenance/source-inventory.json` and implementation inventory.
 2. Historical benchmark: `provenance/historical-benchmark.json`, unchanged 757 denominator.
-3. Supporting derivations: `mathematics.md`, M01–M10.
+3. Supporting derivations: `mathematics.md`, M01–M11.
 4. Algorithm interfaces: this correspondence and `obligations.md`, O3/O5/O7.
 5. Arithmetic/encoding/determinant details: explicit remaining O1/O4/O7; no unproved bounds assumed.
 6. Lean project and actual build records: pinned manifest, `scripts/verify.py`, `verification/`.

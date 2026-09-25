@@ -16,9 +16,10 @@ Primary formalization dependencies:
   Locally executed compiler identifies commit `6caaee842e94`.
 * [mathlib pinned revision](https://github.com/leanprover-community/mathlib4/tree/c44e0c8ee63ca166450922a373c7409c5d26b00b).
   The full transitive dependency revisions are in `lake-manifest.json`.
-* [Matrix/DotProduct.lean](https://github.com/leanprover-community/mathlib4/blob/c44e0c8ee63ca166450922a373c7409c5d26b00b/Mathlib/LinearAlgebra/Matrix/DotProduct.lean).
-  `Matrix.conjTranspose_mul_self_mulVec_eq_zero` supplies the factor-kernel identity;
-  over real numbers conjugate transpose is transpose.
+* [Matrix/Mul.lean](https://github.com/leanprover-community/mathlib4/blob/c44e0c8ee63ca166450922a373c7409c5d26b00b/Mathlib/Data/Matrix/Mul.lean).
+  `Matrix.mulVec_mulVec`, `Matrix.dotProduct_mulVec`, and `Matrix.vecMul_transpose`
+  rewrite the quadratic form in the direct proof of the factor-kernel identity.
+  A finite sum of nonnegative squares then forces every coordinate to vanish.
 * [Fintype/Card.lean](https://github.com/leanprover-community/mathlib4/blob/c44e0c8ee63ca166450922a373c7409c5d26b00b/Mathlib/Data/Fintype/Card.lean).
   Finite cardinality and injection/surjection facts support the abstract helper argument.
 

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Build every project theorem, print its axioms, and reject proof escapes."""
 from pathlib import Path
+from datetime import datetime, timezone
 import hashlib,json,re,subprocess
 root=Path(__file__).resolve().parents[1]
+(root/'verification').mkdir(exist_ok=True)
+(root/'verification/summary.json').unlink(missing_ok=True)
 def code_only(text):
  out=[];i=0;depth=0;string=False
  while i<len(text):
@@ -20,15 +23,15 @@ def code_only(text):
   elif text[i]=='"':string=True;i+=1
   else:out.append(text[i]);i+=1
  return ''.join(out)
-files=sorted((root/'ExactNN').glob('*.lean'));names=[]
-for path in files:
+files=sorted((root/'ExactNN').rglob('*.lean'));names=[]
+sources=[root/'ExactNN.lean',*files]
+for path in sources:
  text=code_only(path.read_text())
  banned=re.findall(r'\b(?:sorry|admit|axiom|sorryAx|native_decide|unsafe)\b',text)
  if banned:raise SystemExit(f'{path.name}: forbidden proof escapes: {banned}')
  names+=['ExactNN.'+s for s in re.findall(r'\btheorem\s+([\w.]+)',text)]
 if len(set(names))!=len(names):raise SystemExit('Duplicate theorem names')
 (root/'Audit.lean').write_text('import ExactNN\n\n'+''.join(f'#print axioms {n}\n' for n in names))
-(root/'verification').mkdir(exist_ok=True)
 def run(args,name):
  proc=subprocess.run(args,cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  (root/'verification'/name).write_text(proc.stdout)
@@ -46,9 +49,10 @@ if seen!=set(names):raise SystemExit(f'Audit mismatch: missing {set(names)-seen}
 for name,axioms in results:
  ax={a.strip() for a in axioms.split(',') if a.strip()}
  if ax-allowed:raise SystemExit(f'{name}: nonstandard axioms: {ax-allowed}')
-report={'theorems':len(names),'modules':len(files),'build_exit_code':0,'axiom_audit_exit_code':0,
+report={'verified_at_utc':datetime.now(timezone.utc).isoformat(),
+ 'theorems':len(names),'modules':len(files),'build_exit_code':0,'axiom_audit_exit_code':0,
  'permitted_foundational_axioms':sorted(allowed),
- 'source_sha256':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
+ 'source_sha256':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
  'scope':'Only the listed declarations; no unconditional P = exists R theorem is claimed.'}
 (root/'verification/summary.json').write_text(json.dumps(report,indent=2)+'\n')
 print(f'PASS: {len(names)} project theorems built and axiom-audited.',flush=True)

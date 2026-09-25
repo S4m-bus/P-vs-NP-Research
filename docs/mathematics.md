@@ -195,7 +195,9 @@ Lean: `binary_product_iff`, `bigM_relu_iff`.
 
 For a real factor matrix H, (H^T H)v=0 iff Hv=0. The reverse direction is immediate.
 For the forward direction multiply by v^T to obtain ||Hv||^2=0, forcing Hv=0.
-The formal proof uses the corresponding pinned mathlib matrix theorem.
+The formal proof rewrites the matrix products to a finite sum of nonnegative
+squares. A zero sum forces every square to be zero, hence every coordinate of Hv
+is zero. The proof uses the pinned matrix identities and finite-sum lemmas.
 It tests the specified group factor and does not select a deletion set.
 
 For Ax<=b, any lambda>=0 with lambda^T A=0 and lambda^T b<0 is an infeasibility
